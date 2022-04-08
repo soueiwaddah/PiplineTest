@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Test Deployment</title>
 
 
     <!-- Custom styles for this template -->
@@ -86,7 +86,7 @@
     <hr>
 
     <footer>
-        <p>&copy; Company 2014</p>
+        <p>&copy; waddah souei 2022</p>
     </footer>
 </div> <!-- /container -->
 
