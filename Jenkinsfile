@@ -1,7 +1,6 @@
-pipeline {
-    agent any
-
-    tools {
+pipeline { 
+     agent any
+      tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "Maven"
     }
@@ -11,7 +10,24 @@ pipeline {
                 git 'https://github.com/soueiwaddah/PiplineTest.git'
             }
          }        
-       stage('Build'){
+       stage ('Compile Stage') {
+
+            steps {
+                withMaven(maven : 'Maven') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage ('Testing Stage') {
+
+            steps {
+                withMaven(maven : 'Maven') {
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Build'){
             steps{
                 sh 'mvn clean package'
             }
@@ -28,4 +44,6 @@ pipeline {
         }
        
     }
+
+
 }
